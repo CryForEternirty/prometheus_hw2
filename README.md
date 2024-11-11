@@ -32,8 +32,7 @@ Group=prometheus
 
 Type=simple
 
-ExecStart=/usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml
---storage.path=/var/lib/prometheus/alertmanager $ARGS
+ExecStart=/usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.path=/var/lib/prometheus/alertmanager $ARGS
 
 ExecReload=/bin/kill -HUP $MAINPID
 
@@ -45,7 +44,8 @@ WantedBy=multi-user.target
 ```
 8. Включаем автозапуск sudo systemctl enable prometheus-alertmanager.service
 9. запускаем и смотрим статус sudo systemctl start  prometheus-alertmanager.service
-10. udo systemctl status  prometheus-alertmanager.service
+10. sudo systemctl status  prometheus-alertmanager.service
+![result](image.png)
 ---
 
 ### Задание 2
